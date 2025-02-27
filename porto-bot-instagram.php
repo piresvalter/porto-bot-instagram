@@ -37,11 +37,12 @@ function generate_instagram_image_on_rest($post, $request, $creating) {
 add_action('admin_menu', 'instagram_image_add_admin_menu');
 function instagram_image_add_admin_menu() {
     add_menu_page(
-        'Configurações Imagem para Instagram',
-        'Imagem Instagram',
+        'Configurações Porto Bot',
+        'Porto Bot',
         'manage_options',
         'instagram_image_settings',
-        'instagram_image_settings_page'
+        'instagram_image_settings_page',
+        'dashicons-instagram'
     );
 }
 
@@ -66,7 +67,7 @@ function instagram_image_settings_page() {
 
     ?>
     <div class="wrap">
-        <h1>Configurações do Imagem para Instagram</h1>
+        <h1>Configurações do Porto Bot</h1>
         <form method="post">
             <?php wp_nonce_field('instagram_save_template_nonce'); ?>
             <textarea id="templateEditor" name="template_content" rows="10" style="width:100%; margin-bottom: 20px;"><?php echo esc_html($template_content); ?></textarea>
